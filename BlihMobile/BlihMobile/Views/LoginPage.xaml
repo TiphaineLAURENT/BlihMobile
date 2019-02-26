@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlihMobile.Views.LoginPage">
+    <StackLayout x:Name="MasterLayout">
+
+        <StackLayout x:Name="LogoLayout" VerticalOptions="FillAndExpand">
+            <Label Text="BLIHMobile" HorizontalOptions="Center" TextColor="White" FontSize="50"/>
+        </StackLayout>
+
+        <StackLayout x:Name="LoginLayout" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness" Phone="40,0,40,0" Tablet="140,150,140,0"/>
+            </StackLayout.Padding>
+
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true"/>
+
+            <Entry x:Name="Entry_Username" Placeholder="Identifiant" />
+            <Entry x:Name="Entry_Password" Placeholder="Mot de passe" />
+            <Button x:Name="Btn_Signin" Text="Se connecter" Clicked="SingInProcedure" />
+
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

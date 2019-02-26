@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlihMobile.Views.RepositoriesPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+            <Button Text="Repositories" HorizontalOptions="StartAndExpand" Clicked="Update"/>
+            <Button Text="SSH Keys" HorizontalOptions="EndAndExpand" Clicked="ChangePage"/>
+            </StackLayout>
+            <Label Text="Repositories list"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
