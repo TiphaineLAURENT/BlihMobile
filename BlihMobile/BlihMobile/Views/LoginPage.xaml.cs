@@ -34,6 +34,8 @@ namespace BlihMobile.Views
         {
             ActivitySpinner.IsVisible = true;
             User user = new User(Entry_Username.Text, Entry_Password.Text);
+            Constants.Username = Entry_Username.Text;
+            Constants.Password = Entry_Password.Text;
             if (user.CheckLogs())
             {
                 ActivitySpinner.IsVisible = false;

@@ -8,9 +8,7 @@
             <Button Text="Repositories" HorizontalOptions="StartAndExpand" Clicked="ChangePage"/>
             <Button Text="SSH Keys" HorizontalOptions="EndAndExpand" Clicked="Update"/>
             </StackLayout>
-            <Label Text="SSH Keys list"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="TextView"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

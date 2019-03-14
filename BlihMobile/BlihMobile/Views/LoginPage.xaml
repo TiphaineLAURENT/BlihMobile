@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BlihMobile.Views.LoginPage">
-    <StackLayout x:Name="MasterLayout">
+    <StackLayout x:Name="MasterLayout" VerticalOptions="CenterAndExpand">
 
-        <StackLayout x:Name="LogoLayout" VerticalOptions="FillAndExpand">
-            <Label Text="BLIHMobile" HorizontalOptions="Center" TextColor="White" FontSize="50"/>
+        <StackLayout x:Name="LogoLayout">
+            <Label Text="BLIHMobile" HorizontalOptions="Center" TextColor="White" FontSize="35"/>
         </StackLayout>
 
         <StackLayout x:Name="LoginLayout" VerticalOptions="StartAndExpand">
@@ -16,7 +16,7 @@
             <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true"/>
 
             <Entry x:Name="Entry_Username" Placeholder="Identifiant" />
-            <Entry x:Name="Entry_Password" Placeholder="Mot de passe" />
+            <Entry x:Name="Entry_Password" Placeholder="Mot de passe" IsPassword="True"/>
             <Button x:Name="Btn_Signin" Text="Se connecter" Clicked="SingInProcedure" />
 
         </StackLayout>
