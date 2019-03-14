@@ -41,17 +41,15 @@ namespace BlihMobile.Models
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
-                var data = JObject.Parse(result)["data"];
+
+                var json = JObject.Parse(result);
+                var data = JObject.Parse(json.ToString())["data"];
+                var repos = JObject.Parse(data.ToString())["repositories"];
+
                 if (method == "repository/list")
-                {
-                    var repo = JObject.Parse(data.ToString())["repositories"];
-                    return repo.ToString();
-                }
+                    return repos.ToString();
                 else if (method == "sshkey/list")
-                {
-                    var repo = JObject.Parse(data.ToString())["sshkeys"];
-                    return repo.ToString();
-                }
+                    return data.ToString();
                 return null;
             }
         }
