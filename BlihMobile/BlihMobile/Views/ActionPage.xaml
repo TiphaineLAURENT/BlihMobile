@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BlihMobile.Views.ActionPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add_people.png" Clicked="AddUser"/>
+        <ToolbarItem Icon="delete.png" Clicked="DeleteRepo"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout x:Name="MasterStack">
+
+            <StackLayout x:Name="MidStack" VerticalOptions="FillAndExpand">
+                <ListView x:Name="AclListView" Margin="20" ListView.HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="50">
+                                <Grid>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding name}"  />
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                                            <Label Text="R"/>
+                                            <Switch x:Name="ReadSwitch" IsToggled="{Binding read}"/>
+                                            <Label Text="W"/>
+                                            <Switch x:Name="WriteSwitch" IsToggled="{Binding write}"/>
+                                            <Label Text="X"/>
+                                            <Switch x:Name="ExecuteSwitch" IsToggled="{Binding execute}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout x:Name="BottomStack">
+                <Button Text="Apply" Clicked="ShowValue"/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

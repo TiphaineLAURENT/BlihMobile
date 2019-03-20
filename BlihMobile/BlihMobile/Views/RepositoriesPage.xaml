@@ -1,14 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BlihMobile.Views.RepositoriesPage">
+             x:Class="BlihMobile.Views.RepositoriesPage"
+             Title="BlihMobile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add_repo.png" Clicked="AddRepo"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
             <Button Text="Repositories" HorizontalOptions="StartAndExpand" Clicked="Update"/>
             <Button Text="SSH Keys" HorizontalOptions="EndAndExpand" Clicked="ChangePage"/>
             </StackLayout>
-            <Label x:Name="TextView"/>
+            <ListView x:Name="RepoListView" Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding .}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

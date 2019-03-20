@@ -13,7 +13,12 @@ namespace BlihMobile.Models
         public static Color BackGroundColorLoginPage = Color.FromHex("#227f7d");
         public static Color BackGroundColorPage = Color.White;
 
-        public static string Username = "";
-        public static string Password = "";
+        public static string Username { get; set; }
+        public static string Password { get; set; }
+
+        public static string SelectedRepo { get; set; }
+        public static string Reason { get; set; }
+
+        public static List<AclUser> AclUsers { get; set; }
     }
 }

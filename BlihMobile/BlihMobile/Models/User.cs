@@ -25,10 +25,7 @@ namespace BlihMobile.Models
 
         public bool CheckLogs()
         {
-            if (!this.Username.Equals("") && !this.Password.Equals(""))
-                return true;
-            else
-                return false;
+            return RequestBlih.TestLogIn(this.Username, this.Password);
         }
     }
 }

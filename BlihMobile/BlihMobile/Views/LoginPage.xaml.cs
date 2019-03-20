@@ -50,7 +50,8 @@ namespace BlihMobile.Views
             }
             else
             {
-                await DisplayAlert("Login", "Login Failed, username or password is empty", "Ok");
+                ActivitySpinner.IsVisible = false;
+                await DisplayAlert("Login failed", "Wrong username or password", "Ok");
             }
         }
     }

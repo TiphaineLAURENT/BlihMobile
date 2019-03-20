@@ -1,14 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BlihMobile.Views.ShhKeysPage">
+             x:Class="BlihMobile.Views.ShhKeysPage"
+             Title="BlihMobile">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
             <Button Text="Repositories" HorizontalOptions="StartAndExpand" Clicked="ChangePage"/>
             <Button Text="SSH Keys" HorizontalOptions="EndAndExpand" Clicked="Update"/>
             </StackLayout>
-            <Label x:Name="TextView"/>
+            <ListView x:Name="KeyListView" Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding .}"  />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
